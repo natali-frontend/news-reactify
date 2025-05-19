@@ -4,14 +4,13 @@ import {formatTimeAgo} from "../../helpers/formatTimeAgo.js";
 const NewsItem = ({item}) => {
     return (
         <li className={styles.item}>
-            <div
-                className={styles.wrapper}
-                style={{backgroundImage: `url${item.image}`}}>
+            <div className={styles.wrapper}>
+                {item.image_url &&  <img src={item.image_url} alt="news" className={styles.image}/>}
             </div>
             <div className={styles.info}>
                 <h3 className={styles.title}>{item.title}</h3>
                 <p className={styles.extra}>
-                    {formatTimeAgo(item.published)} by {item.author}
+                    {formatTimeAgo(item.pubDate)} by {item.source_name}
                 </p>
             </div>
         </li>
