@@ -5,12 +5,12 @@ const NewsItem = ({item}) => {
     return (
         <li className={styles.item}>
             <div className={styles.wrapper}>
-                {item.image_url &&  <img src={item.image_url} alt="news" className={styles.image}/>}
+                {item.image &&  <img src={item.image} alt="news" className={styles.image}/>}
             </div>
             <div className={styles.info}>
                 <h3 className={styles.title}>{item.title}</h3>
                 <p className={styles.extra}>
-                    {formatTimeAgo(item.pubDate)} by {item.source_name}
+                    {formatTimeAgo(item.published)} by {item.author}
                 </p>
             </div>
         </li>
